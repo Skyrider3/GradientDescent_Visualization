@@ -50,7 +50,7 @@ python gradient_descent_app.py
 * **Sum of squared gradients:** See the sum of squared gradients for each point in the trajectory.
 * **Path:** See the path taken by the optimization process.
 
-## Screenshots
+## Visual
 
 ![alt text](https://github.com/Skyrider3/GradientDescent_Visualization/blob/main/Image.png)
 
