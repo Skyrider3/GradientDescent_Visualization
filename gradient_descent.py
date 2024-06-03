@@ -1,13 +1,13 @@
 import numpy as np
 import plotly.graph_objects as go
 
-def cost_function(x, y):
+def cost_function(x: float, y: float) -> float:
     return x**2 + y**2
 
-def gradient(x, y):
+def gradient(x: float, y: float) -> tuple[float, float]:
     return 2*x, 2*y
 
-def gradient_descent(x, y, learning_rate, iterations):
+def gradient_descent(x: float, y: float, learning_rate: float, iterations: int) -> tuple[list[float], list[float]]:
     x_trajectory = [x]
     y_trajectory = [y]
     for _ in range(iterations):
@@ -18,9 +18,9 @@ def gradient_descent(x, y, learning_rate, iterations):
         y_trajectory.append(y)
     return x_trajectory, y_trajectory
 
-def momentum_gradient_descent(x, y, learning_rate, momentum, iterations):
-    v_x = 0
-    v_y = 0
+def momentum_gradient_descent(x: float, y: float, learning_rate: float, momentum: float, iterations: int) -> tuple[list[float], list[float]]:
+    v_x = 0.0
+    v_y = 0.0
     x_trajectory = [x]
     y_trajectory = [y]
     for _ in range(iterations):
@@ -33,9 +33,9 @@ def momentum_gradient_descent(x, y, learning_rate, momentum, iterations):
         y_trajectory.append(y)
     return x_trajectory, y_trajectory
 
-def adagrad_gradient_descent(x, y, learning_rate, iterations):
-    g_x = 0
-    g_y = 0
+def adagrad_gradient_descent(x: float, y: float, learning_rate: float, iterations: int) -> tuple[list[float], list[float]]:
+    g_x = 0.0
+    g_y = 0.0
     x_trajectory = [x]
     y_trajectory = [y]
     for _ in range(iterations):
@@ -48,9 +48,9 @@ def adagrad_gradient_descent(x, y, learning_rate, iterations):
         y_trajectory.append(y)
     return x_trajectory, y_trajectory
 
-def rmsprop_gradient_descent(x, y, learning_rate, decay_rate, iterations):
-    g_x = 0
-    g_y = 0
+def rmsprop_gradient_descent(x: float, y: float, learning_rate: float, decay_rate: float, iterations: int) -> tuple[list[float], list[float]]:
+    g_x = 0.0
+    g_y = 0.0
     x_trajectory = [x]
     y_trajectory = [y]
     for _ in range(iterations):
@@ -63,11 +63,11 @@ def rmsprop_gradient_descent(x, y, learning_rate, decay_rate, iterations):
         y_trajectory.append(y)
     return x_trajectory, y_trajectory
 
-def adam_gradient_descent(x, y, learning_rate, beta1, beta2, iterations):
-    m_x = 0
-    m_y = 0
-    v_x = 0
-    v_y = 0
+def adam_gradient_descent(x: float, y: float, learning_rate: float, beta1: float, beta2: float, iterations: int) -> tuple[list[float], list[float]]:
+    m_x = 0.0
+    m_y = 0.0
+    v_x = 0.0
+    v_y = 0.0
     x_trajectory = [x]
     y_trajectory = [y]
     for i in range(iterations):
@@ -85,4 +85,3 @@ def adam_gradient_descent(x, y, learning_rate, beta1, beta2, iterations):
         x_trajectory.append(x)
         y_trajectory.append(y)
     return x_trajectory, y_trajectory
-

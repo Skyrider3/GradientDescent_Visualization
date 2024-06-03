@@ -1,4 +1,10 @@
-# Gradient Descent Visualization App
+# Looking for Contributors
+# This is open source and open for everyone 
+* Actively looking for contributors to help improve this project. If you are interested in contributing, please reach out to me Linkedin :![alt text](https://www.linkedin.com/in/umamaheswar-e-innovator/).I are particularly interested in contributions that can help add web visualization, including 3D gradient visualization and 3D animation.
+
+
+
+# Gradient Descent Visualization
 
 This repository contains a Python application that visualizes the gradient descent algorithm for various optimization problems. The app allows users to:
 

@@ -1,7 +1,7 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QSlider, QLabel, QComboBox, QDoubleSpinBox, QCheckBox
-from PyQt5.QtCore import Qt
-from PyQt5.QtWebEngineWidgets import QWebEngineView
+from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QSlider, QLabel, QComboBox, QDoubleSpinBox, QCheckBox
+from PySide6.QtCore import Qt
+from PySide6.QtWebEngineWidgets import QWebEngineView
 from gradient_descent import *
 from utils import *
 
@@ -12,7 +12,7 @@ class GradientDescentApp(QMainWindow):
 
     def initUI(self):
         self.setWindowTitle("Gradient Descent Viz")
-        self.setGeometry(300, 300, 800, 600)
+        self.setGeometry(300, 300, 1200, 800)
         self.createWidgets()
         self.createLayout()
 
@@ -103,8 +103,9 @@ class GradientDescentApp(QMainWindow):
         layout = QHBoxLayout()
         layout.addWidget(self.plot_area)
         layout.addWidget(self.sidebar)
-        self.setCentralWidget(QWidget())
-        self.centralWidget().setLayout(layout)
+        central_widget = QWidget()
+        central_widget.setLayout(layout)
+        self.setCentralWidget(central_widget)
 
     def update_plot(self):
         learning_rate = self.learning_rate_spin.value()
@@ -142,4 +143,4 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     window = GradientDescentApp()
     window.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
