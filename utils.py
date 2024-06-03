@@ -27,7 +27,6 @@ def create_visualization(
             name=optimizer
         )
     ])
-
     if show_arrows:
         add_gradient_arrows(fig, x_trajectory, y_trajectory)
 
@@ -96,10 +95,33 @@ def create_meshgrid(
     z_grid = cost_function(x_grid, y_grid)
     return x_grid, y_grid, z_grid
 
-if __name__ == "__main__":
-    # Example usage for testing
-    x, y = 5, 5
-    iterations = 50
-    x_traj, y_traj = gradient_descent(x, y, 0.1, iterations)
-    fig = create_visualization(x_traj, y_traj, "Gradient Descent", show_arrows=True, show_path=True)
-    fig.show()
+def create_path(
+    x_trajectory: List[float],
+    y_trajectory: List[float]
+) -> go.Figure:   
+    fig = go.Figure(data=[
+        go.Surface(x=x_grid, y=y_grid, z=z_grid),
+        go.Scatter3d(
+            x=x_trajectory,
+            y=y_trajectory,
+            z=calculate_cost_trajectory(x_trajectory, y_trajectory),
+            mode='lines+markers',
+            name='Path'
+        )
+    ])
+
+    set_layout(fig)
+    return fig
+
+def create_gradient_arrows(
+    x_trajectory: List[float],
+    y_trajectory: List[float]
+) -> go.Figure:
+    fig = go.Figure(data=[
+        go.Surface(x=x_grid, y=y_grid, z=z_grid),
+    ])
+
+    add_gradient_arrows(fig, x_trajectory, y_trajectory)
+
+    set_layout(fig)
+    return fig

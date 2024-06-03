@@ -117,7 +117,7 @@ class GradientDescentApp(QMainWindow):
         beta2 = self.beta2_spin.value()
 
         show_gradient_arrows = self.show_gradient_arrows_checkbox.isChecked()
-        show_adjusted_gradient_arrows = self.show_adjusted_gradient_arrows_checkbox.isChecked()
+        show_adjusted_gradient_arrows = self.show_adjusted_gradient_arrows_checkbox.isChecked() # need to work on gradient arrows for 3d visualizations
         show_momentum_arrows = self.show_momentum_arrows_checkbox.isChecked()
         show_sum_of_gradient_squared = self.show_sum_of_gradient_squared_checkbox.isChecked()
         show_path = self.show_path_checkbox.isChecked()
