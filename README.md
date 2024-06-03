@@ -52,7 +52,7 @@ python gradient_descent_app.py
 
 ## Screenshots
 
-[Insert your screenshot images here, using Markdown image syntax]
+![alt text](https://github.com/Skyrider3/GradientDescent_Visualization/blob/main/Image.png)
 
 ## Contributing
 
